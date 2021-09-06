@@ -103,7 +103,6 @@ func main() {
 				fmt.Println("Enter the index for the circle to be removed")
 				fmt.Scanf("%d\n",&index);
 				circleStore = removeCircle(index,circleStore)
-				break;
 			case 7:
 				return
 			default:
