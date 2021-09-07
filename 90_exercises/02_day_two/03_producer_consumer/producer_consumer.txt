@@ -1,7 +1,7 @@
 We want to create a single producer multiple consumer to print out
 T.S. Eliots poem "The Waste Land", first verse one line at the time. Producer and
 all the consumers are goroutines talking through channels. Producer pushes the
-lines to the channels and consumers read and print.
+lines to the channel and consumers read and print.
 
 https://en.wikipedia.org/wiki/Producer%E2%80%93consumer_problem
 
