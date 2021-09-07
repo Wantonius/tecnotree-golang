@@ -1,0 +1,3 @@
+Create a rock-paper-scissors game where player plays against a computer 
+opponent. Opponent is a goroutine that randomly decides which play to 
+make. First to three points wins. Synchronize with channels
