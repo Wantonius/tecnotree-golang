@@ -1,0 +1,11 @@
+Your own homepage
+
+Using the template engine create your own homepage. 
+The handleFunc can handle different templates on different urls
+
+
+Template Package
+https://pkg.go.dev/html/template
+
+Using templates:
+https://blog.gopheracademy.com/advent-2017/using-go-templates/

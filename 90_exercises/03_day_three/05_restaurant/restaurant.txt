@@ -1,0 +1,11 @@
+The Goroutine Socket Restaurant
+
+Based on the chat app we will create a restaurant. When clients contact
+the restaurant they are given a table. Clients can send their orders
+in like messages in the chat app. However these are not sent to everybody
+but rather there is a single kitchen goroutine which gets ALL the messages
+coming from clients. This will replace the individual send() goroutines for clients.
+It will only print out the orders. The startService is obviously still there
+
+Bonus 1, if you have time:
+Add a menu which is sent from the server to the clients when the connection is first opened.
