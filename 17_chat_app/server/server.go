@@ -22,7 +22,44 @@ type Client struct {
 }
 
 func (manager *Manager) startService() {
-
+	for {
+		select {
+			case connection := <-manager.register:
+				manager.clients[connection] = true
+				fmt.Printf("User %s has entered the chat\n",connection.name)
+				for conn := range manager.clients {
+					select {
+						case conn.data <- "User "+connection.name+" has entered\n":
+						default: 
+							close(conn.data)
+							delete(manager.clients,conn)
+						}
+				}		
+			case connection := <- manager.unregister:
+				if _,ok := manager.clients[connection]; ok {
+					close(connection.data)
+					fmt.Printf("User %s has left the chat\n",connection.name)
+					delete(manager.clients,connection)
+					for conn := range manager.clients {
+						select {
+							case conn.data <- "User "+connection.name+" has left\n":
+							default: 
+								close(conn.data)
+								delete(manager.clients,conn)
+							}
+					}				
+				}
+			case message := <-manager.broadcast:
+				for conn := range manager.clients{
+					select {
+						case conn.data <- message:
+						default: 
+							close(conn.data)
+							delete(manager.clients,conn)
+						}			
+				}
+		}	
+	}
 }
 
 func (manager *Manager) receive(client *Client) {
