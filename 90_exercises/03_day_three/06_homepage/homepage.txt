@@ -9,3 +9,4 @@ https://pkg.go.dev/html/template
 
 Using templates:
 https://blog.gopheracademy.com/advent-2017/using-go-templates/
+https://levelup.gitconnected.com/learn-and-use-templates-in-go-aa6146b01a38
