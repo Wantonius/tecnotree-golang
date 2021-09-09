@@ -1,0 +1,22 @@
+The Hotel App
+
+Create a backend to serve both frontend files and a rest API
+
+
+REST API:
+
+GET -> /api/hotel gets all hotels
+POST -> /api/hotel adds a new hotel. Needs a hotel as a body
+DELETE -> /api/hotel/:id deletes hotel of id
+PUT -> /api/hotel/:id replaces hotel of id. Needs a hotel as a body
+
+Hotel object {
+	id:int,
+	name:string,
+	address:string,
+	city:string,
+	country:string,
+	comment:string
+}
+
+Frontend is provided under /public

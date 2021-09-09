@@ -17,8 +17,8 @@ import (
 type Item struct {
 	Id			string	`json:"id"`
 	Type		string	`json:"type"`
-	Count		int		`json:"count"`
-	Price		float64	`json:"price"`
+	Count		string	`json:"count"`
+	Price		string	`json:"price"`
 }
 
 type BackendMessage struct {
