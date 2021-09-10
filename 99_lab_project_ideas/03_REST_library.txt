@@ -1,0 +1,24 @@
+The REST library
+
+Implement a backend of a library app. In the library you can browse books without logging in. When you log in
+you can loan books that have not been loaned and return books that you have loaned. Also there is one premade user
+admin who can add,delete and edit books. So users should have isAdmin parameter which will be false for all newly registered users.
+
+REST API
+
+GET /books -> get all books
+POST /register -> register new user. Needs username and password. Check for duplicates
+POST /login -> login user. Needs username and password. Return a token
+POST /api/book/:id -> loan a book with id id. Needs login and is protected by token
+DELETE /api/book/:id -> return a loaned book. This can be done only by the user that loaned the book. Use Session information to store username
+POST /api/admin/ -> creates a new book with the information provided by request body. You can make them similar to the ones in the link at the bottom. 
+					User needs to be admin and needs to have logged in and have the token
+DELETE /api/admin/:id -> delete a book. Same rules as with adding book
+PUT /api/admin/:id -> edit a book. Combination of new book and delete book. Also need to be admin and have token.
+
+Test with Insomnia or Postman or such
+
+For books you can use for example this
+https://github.com/benoitvallon/100-best-books/blob/master/books.json
+
+Just remove the imageLink and add loaned

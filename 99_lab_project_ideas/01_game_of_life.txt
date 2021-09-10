@@ -1,0 +1,11 @@
+Game of Life
+
+For those who just want to practice basic Go lang you will make classic Game of Life
+https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life
+
+The rules for the automatons are in the Wikipedia article. The grid needs to be continuous so if the 
+automaton goes over leftside it will appear on the rightside and so on. Same with up and down.
+
+Hot tip: Use two 2d slices to represent the grid. One for the display purposes and the other for the changes
+Do not make the changes to the same grid. Just do the changes to the other one and copy back to the display one.
+It will a lot easier.

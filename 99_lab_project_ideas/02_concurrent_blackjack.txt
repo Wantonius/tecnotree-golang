@@ -1,0 +1,13 @@
+Concurrent Blackjack 
+
+We will create a blackjack game with a server and clients. Server will handle the 
+player connections and the game logic. There will a "dealer" goroutine that plays
+according to the house rules (take another card at 16 and stay at 17). Use only
+one deck. Connections are mostly handled like in the chat app example except for the
+game logic. Connect to the clients with sockets and synchronize with channels in the server. 
+
+Rules: https://en.wikipedia.org/wiki/Blackjack
+
+Do not implement splitting or insurance. Start by implementing the connections and dealing first two cards.
+
+Also aces can be only 11 in this case.
